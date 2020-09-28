@@ -76,7 +76,7 @@ popModal = ' <!-- Modal Trigger -->\
 document.addEventListener('DOMContentLoaded', function(){
     var loadedInterval = setInterval(function(){
         console.log("out");
-        if(f4aLoaded.css == true && f4aLoaded.js == true){
+        if(f4aLoaded.css === true && f4aLoaded.js === true){
             //append the ui
             var mainDiv = document.createElement('div');
             mainDiv.classList.add('fra-ui');
@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function(){
             document.body.appendChild(mainDiv);
 
             var modalContent = document.querySelector('#fra-ui-modalcontent');
-            var testContent = document.querySelector('#test');
+            var testContent = document.querySelector('#fra-ui-login');
             modalContent.innerHTML = testContent.innerHTML;
 
 
@@ -102,3 +102,53 @@ document.addEventListener('DOMContentLoaded', function(){
         }
     },2000);
 });
+
+
+function fra_ui_switchToLogin(){
+    let modalContent = document.querySelector('#fra-ui-modalcontent');
+    let content = document.querySelector('#fra-ui-login');
+    modalContent.innerHTML = content.innerHTML;
+}
+
+function fra_ui_switchToRegister(){
+    let modalContent = document.querySelector('#fra-ui-modalcontent');
+    let registerContent = document.querySelector('#fra-ui-register');
+    modalContent.innerHTML = registerContent.innerHTML;
+}
+
+function fra_ui_switchToForgot(){
+    let modalContent = document.querySelector('#fra-ui-modalcontent');
+    let content = document.querySelector('#fra-ui-forgot');
+    modalContent.innerHTML = content.innerHTML;
+}
+
+//forgot password
+function fra_ui_forgot(element){
+    let email = element.querySelector("#fra-ui-forgot-email").value;
+
+    //call the api and login
+
+
+    //switch the user to login page
+    fra_ui_switchToLogin();
+    return false;
+}
+
+function fra_ui_login(element){
+    let email = element.querySelector("#fra-ui-login-email").value;
+    let password = element.querySelector("#fra-ui-login-password").value;
+
+    //call the api and login
+
+    return false;
+}
+
+function fra_ui_register(element){
+    let email = element.querySelector("#fra-ui-register-email").value;
+    let password = element.querySelector("#fra-ui-register-password").value;
+    let phone = element.querySelector("#fra-ui-register-phone").value;
+
+    //call the api and login
+
+    return false;
+}
