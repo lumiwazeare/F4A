@@ -122,6 +122,12 @@ function fra_ui_switchToForgot(){
     modalContent.innerHTML = content.innerHTML;
 }
 
+function fra_ui_switchToMain(){
+    let modalContent = document.querySelector('#fra-ui-modalcontent');
+    let content = document.querySelector('#fra-ui-main');
+    modalContent.innerHTML = content.innerHTML;
+}
+
 //forgot password
 function fra_ui_forgot(element){
     let email = element.querySelector("#fra-ui-forgot-email").value;
@@ -147,6 +153,9 @@ function fra_ui_register(element){
     let email = element.querySelector("#fra-ui-register-email").value;
     let password = element.querySelector("#fra-ui-register-password").value;
     let phone = element.querySelector("#fra-ui-register-phone").value;
+
+    let firstname = element.querySelector("#fra-ui-register-firstname").value;
+    let lastname = element.querySelector("#fra-ui-register-lastname").value;
 
     //call the api and login
 
